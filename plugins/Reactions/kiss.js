@@ -25,43 +25,43 @@ function resolveDisplayJid(jid) {
 }
 
 export default {
-    name: 'hug',
-    aliases: ['cuddle', 'embrace'],
-    description: 'Hug a tagged or quoted user',
+    name: 'kiss',
+    aliases: ['smooch', 'peck'],
+    description: 'Kiss a tagged or quoted user',
     run: async (context) => {
         const { client, m } = context;
         const fq = getFakeQuoted(m);
         await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
-        await client.sendMessage(m.chat, { react: { text: '🤗', key: m.reactKey } });
+        await client.sendMessage(m.chat, { react: { text: '💋', key: m.reactKey } });
         try {
             const target = getTarget(m);
             await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
             if (!target) {
                 await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } }).catch(() => {});
-                return m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├ Tag or quote someone to hug.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+                return m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├ Tag or quote someone to kiss.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
             }
             const resolvedTarget = resolveDisplayJid(target);
             const tNum = resolvedTarget.split('@')[0];
             const sNum = resolveDisplayJid(m.sender).split('@')[0];
-            if (links.hug) {
+            if (links.kiss) {
                 try {
-                    const buf = await getBuffer(links.hug);
+                    const buf = await getBuffer(links.kiss);
                     await client.sendMessage(m.chat, { sticker: buf }, { quoted: fq });
-                    await client.sendMessage(m.chat, { text: `@${sNum} hugged @${tNum} 🤗`, mentions: [m.sender, resolvedTarget] }, { quoted: fq });
+                    await client.sendMessage(m.chat, { text: `@${sNum} kissed @${tNum} 💋`, mentions: [m.sender, resolvedTarget] }, { quoted: fq });
                     return;
                 } catch {}
             }
             const lines = [
-                `@${sNum} gave @${tNum} a hug they didn't ask for. 🤗`,
-                `@${sNum} wrapped @${tNum} up in a hug. Wholesome or weird, you decide. 🫂`,
-                `@${sNum} hugged @${tNum}. Finally some peace in this group. 🤗`,
+                `@${sNum} kissed @${tNum} and nobody asked. 💋`,
+                `@${sNum} planted one right on @${tNum}. Bold move. 😘`,
+                `@${sNum} kissed @${tNum}. The group just got awkward. 💋`,
             ];
             await client.sendMessage(m.chat, {
                 text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├ ${lines[Math.floor(Math.random() * lines.length)]}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`,
                 mentions: [m.sender, resolvedTarget]
             }, { quoted: fq });
         } catch {
-            await m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├ Hug failed. Try again.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+            await m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├ Kiss failed. Try again.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
         }
     }
 };
