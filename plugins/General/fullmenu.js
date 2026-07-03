@@ -61,7 +61,7 @@ export default {
         .join('');
     };
 
-    let menuText = `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗    ᕗ━━━\n├━━━≫ Fᴜʟʟ Mᴇɴᴜ ≪━━━\n├ \n├ Greetings, @${m.sender.split('@')[0].split(':')[0]}\n├ \n├ Bot: ${botname}\n├ Total Commands: ${totalCommands}\n├ Time: ${getCurrentTimeInNairobi()}\n├ Prefix: ${effectivePrefix || 'None'}\n├ Mode: ${mode}\n├ Library: Baileys\n╰━━━━━━━━━━━━━━━━ᕗ\n\n`;
+    let menuText = `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Fᴜʟʟ Mᴇɴᴜ ≪━━━\n├ \n├ Greetings, @${m.sender.split('@')[0].split(':')[0]}\n├ \n├ Bot: ${botname}\n├ Total Commands: ${totalCommands}\n├ Time: ${getCurrentTimeInNairobi()}\n├ Prefix: ${effectivePrefix || 'None'}\n├ Mode: ${mode}\n├ Library: Baileys\n╰━━━━━━━━━━━━━━━━ᕗ\n\n`;
 
     for (const category of categories) {
       let commandFiles;
@@ -71,7 +71,7 @@ export default {
 
       if (commandFiles.length === 0 && category.name !== 'NSFW') continue;
 
-      menuText += `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗    ᕗ━━━\n├━━━≫ ${category.display} ≪━━━\n├ \n`;
+      menuText += `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ ${category.display} ≪━━━\n├ \n`;
 
       if (category.name === 'NSFW') {
         const plus18Commands = ['xvideo'];
@@ -103,16 +103,13 @@ export default {
       menuText += `╰━━━━━━━━━━━━━━━━ᕗ\n\n`;
     }
 
-    menuText += `> 『☠』 𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗 『☠』`;
+    menuText += `> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
 
     await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
     await client.sendMessage(m.chat, {
       text: menuText,
       contextInfo: { mentionedJid: [m.sender] }
     }, { quoted: fq });
-
-    const device = await getDeviceMode();
-    if (device === 'ios') return;
 
     const sections = categories
       .filter(cat => {
@@ -123,11 +120,33 @@ export default {
         rows: [{ title: `${cat.emoji} ${cat.display}`, description: `View ${cat.name} commands`, id: `${effectivePrefix}${cat.name.toLowerCase()}menu` }]
       }));
 
+    const device = await getDeviceMode();
+
+    if (device === 'ios') {
+      try {
+        await client.sendMessage(m.chat, {
+          listMessage: {
+            title: 'Browse Categories',
+            description: 'Select a category to view its commands.',
+            buttonText: 'Browse Categories',
+            listType: 1,
+            sections: sections.map(s => ({
+              title: s.title,
+              rows: s.rows.map(r => ({ title: r.title, description: r.description, rowId: r.id }))
+            })),
+            footer: '©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆',
+          },
+        }, { quoted: fq });
+      } catch {}
+      await client.sendMessage(m.chat, { react: { text: '✅', key: m.reactKey } });
+      return;
+    }
+
     try {
       const interactiveMsg = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
         interactiveMessage: {
           body: { text: 'Browse Categories' },
-          footer: { text: '『☠』 𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗 『☠』' },
+          footer: { text: '©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆' },
           header: { hasMediaAttachment: false },
           nativeFlowMessage: {
             messageVersion: 1,
@@ -144,7 +163,6 @@ export default {
         }
       }), { quoted: fq, userJid: client.user.id });
       await client.sendMessage(m.chat, { react: { text: '✅', key: m.reactKey } });
-
       await client.relayMessage(m.chat, interactiveMsg.message, { messageId: interactiveMsg.key.id });
     } catch (e) {
     }
