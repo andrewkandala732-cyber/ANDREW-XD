@@ -9,16 +9,16 @@ export default async (context) => {
         const fq = getFakeQuoted(m);
         await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
 
-        const fmt = (msg) => `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ ONLINE PRIVACY ≪━━━\n├ \n├ ${msg}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
-        const options = ['all', 'match_last_seen'];
+        const fmt = (msg) => `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ CALL PRIVACY ≪━━━\n├ \n├ ${msg}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©fredi_ezra`;
+        const options = ['all', 'known', 'none'];
         const value = (args[0] || '').toLowerCase();
 
         if (options.includes(value)) {
             try {
                 await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
-                await client.updateOnlinePrivacy(value);
+                await client.updateCallPrivacy(value);
                 await client.sendMessage(m.chat, { react: { text: '✅', key: m.reactKey } });
-                return m.reply(fmt(`Online privacy updated to: *${value}*`));
+                return m.reply(fmt(`Call privacy set to: *${value}*`));
             } catch (e) {
                 await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } });
                 return m.reply(fmt(`Failed: ${e.message?.slice(0, 60)}`));
@@ -28,21 +28,22 @@ export default async (context) => {
                 const _devMode = await getDeviceMode();
         if (_devMode === 'ios') {
             await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } });
-            await client.sendMessage(m.chat, { text: fmt('Who can see when you\'re online?\nSelect an option below.') }, { quoted: fq });
+            await client.sendMessage(m.chat, { text: fmt('Who can call you?\nSelect an option below.') }, { quoted: fq });
         } else {
     const _msg = generateWAMessageFromContent(m.chat, {
                 interactiveMessage: {
-                    body: { text: fmt('Who can see when you\'re online?\nSelect an option below.') },
+                    body: { text: fmt('Who can call you?\nSelect an option below.') },
                     footer: { text: '' },
                     nativeFlowMessage: {
                         buttons: [{
                             name: 'single_select',
                             buttonParamsJson: JSON.stringify({
-                                title: 'Set Online Privacy',
+                                title: 'Set Call Privacy',
                                 sections: [{
                                     rows: [
-                                        { title: 'All ✅', description: 'Everyone sees online status', id: `${prefix}online all` },
-                                        { title: 'Match Last Seen 🕒', description: 'Match your last seen privacy', id: `${prefix}online match_last_seen` }
+                                        { title: 'All ✅', description: 'Anyone can call you', id: `${prefix}callprivacy all` },
+                                        { title: 'Known 👥', description: 'Only contacts can call', id: `${prefix}callprivacy known` },
+                                        { title: 'None 🚫', description: 'Nobody can call you', id: `${prefix}callprivacy none` }
                                     ]
                                 }]
                             })

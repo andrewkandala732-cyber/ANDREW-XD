@@ -9,16 +9,16 @@ export default async (context) => {
         const fq = getFakeQuoted(m);
         await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
 
-        const fmt = (msg) => `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ ONLINE PRIVACY ≪━━━\n├ \n├ ${msg}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
-        const options = ['all', 'match_last_seen'];
+        const fmt = (msg) => `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ GROUP ADD ≪━━━\n├ \n├ ${msg}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+        const options = ['all', 'contacts', 'contact_blacklist', 'none'];
         const value = (args[0] || '').toLowerCase();
 
         if (options.includes(value)) {
             try {
                 await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
-                await client.updateOnlinePrivacy(value);
+                await client.updateGroupsAddPrivacy(value);
                 await client.sendMessage(m.chat, { react: { text: '✅', key: m.reactKey } });
-                return m.reply(fmt(`Online privacy updated to: *${value}*`));
+                return m.reply(fmt(`Group add privacy updated to: *${value}*`));
             } catch (e) {
                 await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } });
                 return m.reply(fmt(`Failed: ${e.message?.slice(0, 60)}`));
@@ -28,21 +28,23 @@ export default async (context) => {
                 const _devMode = await getDeviceMode();
         if (_devMode === 'ios') {
             await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } });
-            await client.sendMessage(m.chat, { text: fmt('Who can see when you\'re online?\nSelect an option below.') }, { quoted: fq });
+            await client.sendMessage(m.chat, { text: fmt('Who can add you to groups?\nSelect an option below.') }, { quoted: fq });
         } else {
     const _msg = generateWAMessageFromContent(m.chat, {
                 interactiveMessage: {
-                    body: { text: fmt('Who can see when you\'re online?\nSelect an option below.') },
+                    body: { text: fmt('Who can add you to groups?\nSelect an option below.') },
                     footer: { text: '' },
                     nativeFlowMessage: {
                         buttons: [{
                             name: 'single_select',
                             buttonParamsJson: JSON.stringify({
-                                title: 'Set Online Privacy',
+                                title: 'Set Group Add Privacy',
                                 sections: [{
                                     rows: [
-                                        { title: 'All ✅', description: 'Everyone sees online status', id: `${prefix}online all` },
-                                        { title: 'Match Last Seen 🕒', description: 'Match your last seen privacy', id: `${prefix}online match_last_seen` }
+                                        { title: 'All ✅', description: 'Anyone can add you', id: `${prefix}groupadd all` },
+                                        { title: 'Contacts 👥', description: 'Only contacts can add', id: `${prefix}groupadd contacts` },
+                                        { title: 'Blacklist 🚫', description: 'Contact blacklist only', id: `${prefix}groupadd contact_blacklist` },
+                                        { title: 'None ❌', description: 'Nobody can add you', id: `${prefix}groupadd none` }
                                     ]
                                 }]
                             })
