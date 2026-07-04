@@ -11,7 +11,7 @@ import { getDeviceMode } from '../../lib/deviceMode.js';
 export default {
     name: 'menu',
     aliases: ['commands', 'list', 'cmds', 'm', 'cmd', 'commandlist', 'allcmds'],
-    description: 'Displays the ᖴᗴᗴ-᙭ᗰᗪツ command menu',
+    description: 'Displays the 𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗 command menu',
     run: async (context) => {
         const { client, m, mode, pict, botname, prefix } = context;
         const fq = getFakeQuoted(m);
@@ -25,23 +25,23 @@ export default {
         if (cleanText !== '' && !['menu', 'commands', 'list', 'cmds', 'm', 'help', 'cmd', 'commandlist', 'allcmds'].includes(firstWord)) {
             const commandName = cleanText.split(' ')[0];
             return client.sendMessage(m.chat, {
-                text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ Yo ${m.pushName}, what's with the\n├ extra bullshit after "${commandName}"?\n├ Just type *${prefix}menu* properly, moron.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`
+                text: `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ Yo ${m.pushName}, what's with the\n├ extra bullshit after "${commandName}"?\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪`,
             }, { quoted: fq });
         }
 
         const menuText =
-            `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n` +
+            `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n` +
             `├━━━≫ Mᴇɴᴜ ≪━━━\n` +
             `├ \n` +
             `Hoi  @${m.sender.split('@')[0].split(':')[0]}\n` +
             `├ \n` +
-            `├ Bot: ᖴᗴᗴ-᙭ᗰᗪツ\n` +
+            `├ Bot: 𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗\n` +
             `├ Prefix: ${prefix}\n` +
             `├ Mode: ${mode}\n` +
             `├ \n` +
             `├ Select a category below.\n` +
             `╰━━━━━━━━━━━━━━━━ᕗ\n` +
-            `> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+            `> ©𝗔𝗡𝗗𝗥𝗘𝗪`;
 
         const sections = [
             {
@@ -168,39 +168,4 @@ export default {
             }, { quoted: fq });
             await client.sendMessage(m.chat, {
                 listMessage: {
-                    title: '𝐕𝐈𝐄𝐖 𝐎𝐏𝐓𝐈𝐎𝐍𝐒',
-                    description: 'Select a category to view its commands.',
-                    buttonText: 'Browse Commands',
-                    listType: 1,
-                    sections: sections.map(s => ({
-                        title: s.title,
-                        rows: s.rows.map(r => ({ title: r.title, description: r.description, rowId: r.id }))
-                    })),
-                    footer: '',
-                },
-            }, { quoted: fq });
-        }
-
-        const frediPaths = [
-            path.join(__dirname, 'fredi_med'),
-            path.join(process.cwd(), 'fredi_med'),
-            path.join(__dirname, '..', 'fredi_med')
-        ];
-        let audioFolder = null;
-        for (const folderPath of frediPaths) {
-            if (fs.existsSync(folderPath)) { audioFolder = folderPath; break; }
-        }
-        if (!audioFolder) return;
-        const menuFiles = ['menu1.mp3', 'menu2.mp3', 'menu3.mp3', 'menu4.mp3'];
-        const possibleFiles = menuFiles.map(f => path.join(audioFolder, f)).filter(f => fs.existsSync(f));
-        if (possibleFiles.length === 0) return;
-        const randomFile = possibleFiles[Math.floor(Math.random() * possibleFiles.length)];
-        await new Promise(resolve => setTimeout(resolve, 500));
-        try {
-            const audioBuffer = fs.readFileSync(randomFile);
-            await client.sendMessage(m.chat, { audio: audioBuffer, ptt: true, mimetype: 'audio/mpeg', fileName: 'fredi-menu.m4a' }, { quoted: fq });
-        } catch {
-            await client.sendMessage(m.chat, { audio: { url: randomFile }, ptt: true, mimetype: 'audio/mpeg', fileName: 'fredi-menu.m4a' }, { quoted: fq });
-        }
-    },
-};
+{
