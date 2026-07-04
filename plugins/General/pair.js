@@ -10,8 +10,7 @@ import { getFakeQuoted } from '../../lib/fakeQuoted.js';
 
                 import { generateWAMessageFromContent, proto } from '@whiskeysockets/baileys';
 function cleanNumber(input) {
-    let num = input.replace(/[\s\-\(\)\+\.]/g, '');
-    num = num.replace(/[^0-9]/g, '');
+    let num = input.replace(/[^0-9]/g, '');
     if (num.startsWith('00')) {
         num = num.slice(2);
     }
@@ -39,7 +38,7 @@ export default {
         try {
             if (!text) {
                 return await client.sendMessage(m.chat, {
-                    text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Pᴀɪʀɪɴɢ ≪━━━\n├ \n├ Oi genius, give me a number\n├ to pair with. You think I can\n├ read your mind?\n├ \n├ Usage: *${prefix}pair <number>*\n├ Example: *${prefix}pair 255752593977*\n├ Example: *${prefix}pair +255 752 593 977*\n├ \n├ Spaces, dashes, plus signs...\n├ I'll clean that mess up for you.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`
+                    text: `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Pᴀɪʀɪɴɢ ≪━━━\n├ \n├ Oi genius, give me a number\n├ to pair with. You think I'm psychic?\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪`,
                 }, { quoted: fq });
             }
 
@@ -47,14 +46,14 @@ export default {
 
             if (number.length < 6 || number.length > 15) {
                 return await client.sendMessage(m.chat, {
-                    text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Iɴᴠᴀʟɪᴅ Nᴜᴍʙᴇʀ ≪━━━\n├ \n├ That number is garbage.\n├ Cleaned: ${number}\n├ Need 6-15 digits with country code.\n├ Try again with a real number.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`
+                    text: `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Iɴᴠᴀʟɪᴅ Nᴜᴍʙᴇʀ ≪━━━\n├ \n├ That number is garbage.\n├ Cleaned: ${number}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪`,
                 }, { quoted: fq });
             }
 
             await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
 
             await client.sendMessage(m.chat, {
-                text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Pᴀɪʀɪɴɢ ≪━━━\n├ \n├ Generating code for: ${number}\n├ Hold on, this takes a sec...\n├ Don't spam the command, idiot.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`
+                text: `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Pᴀɪʀɪɴɢ ≪━━━\n├ \n├ Generating code for: ${number}\n├ Hold on, this takes a sec\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪`,
             }, { quoted: fq });
 
             const sessionId = makeid(8);
@@ -117,10 +116,10 @@ export default {
                         message: {
                             interactiveMessage: proto.Message.InteractiveMessage.create({
                                 body: proto.Message.InteractiveMessage.Body.create({
-                                    text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Pᴀɪʀɪɴɢ Cᴏᴅᴇ ≪━━━\n├ \n├ Number: ${number}\n├ Code: *${formattedCode}*\n├ \n├ Copy the code and paste it\n├ in your WhatsApp linked\n├ devices section.\n├ \n├ The code expires quickly so\n├ move your slow ass.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`
+                                    text: `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Pᴀɪʀɪɴɢ Cᴏᴅᴇ ≪━━━\n├ \n├ Number: ${number}\n├ Code: *${formattedCode}*\n├ \n├ Copy the code and paste it\n├ in your WhatsApp linked\n├ devices section.\n├ \n├ The code expires quickly so\n├ move your slow ass.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪`
                                 }),
                                 footer: proto.Message.InteractiveMessage.Footer.create({
-                                    text: 'Fee-XMD Pairing System'
+                                    text: '𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗 Pairing System'
                                 }),
                                 nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                     buttons: [
@@ -147,7 +146,7 @@ export default {
             } catch (btnErr) {
     await client.sendMessage(m.chat, { react: { text: '', key: m.reactKey } }).catch(() => {});
                 await client.sendMessage(m.chat, {
-                    text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Pᴀɪʀɪɴɢ Cᴏᴅᴇ ≪━━━\n├ \n├ Number: ${number}\n├ Code: *${formattedCode}*\n├ \n├ Copy the code above and paste\n├ it in your WhatsApp linked\n├ devices section. Hurry up,\n├ it expires quick.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`
+                    text: `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Pᴀɪʀɪɴɢ Cᴏᴅᴇ ≪━━━\n├ \n├ Number: ${number}\n├ Code: *${formattedCo...}
                 }, { quoted: fq });
             }
 
@@ -164,7 +163,7 @@ export default {
             console.error("Error in pair command:", error);
             await client.sendMessage(m.chat, { react: { text: '', key: m.reactKey } });
             await client.sendMessage(m.chat, {
-                text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Pᴀɪʀɪɴɢ Fᴀɪʟᴇᴅ ≪━━━\n├ \n├ Couldn't generate the code.\n├ ${error.message || 'Unknown error'}\n├ \n├ Make sure the number is valid\n├ and actually on WhatsApp.\n├ Then try again, if you can\n├ manage that.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`
+                text: `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Pᴀɪʀɪɴɢ Fᴀɪʟᴇᴅ ≪━━━\n├ \n├ Couldn't generate the code.\n├ ${error.me...}
             }, { quoted: fq });
         }
     }
