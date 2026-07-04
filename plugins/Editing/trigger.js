@@ -6,7 +6,7 @@ export default async (context) => {
         const fq = getFakeQuoted(m);
         await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
 
-let cap = `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ TRIGGER ≪━━━\n├ \n├ Converted By ${botname}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+let cap = `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ TRIGGER ≪━━━\n├ \n├ Converted By ${botname}\n╰━━━━━━━━━━━━━━━━ᕗ...`;
 
 try {
 
@@ -27,8 +27,8 @@ try {
         } 
 
         let sticker = new Sticker(result, {
-            pack: `FEE-XMD`,
-            author:"fredi_ezra [tech]" ,
+            pack: `𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗`,
+            author:"𝗔𝗡𝗗𝗥𝗘𝗪 [tech]" ,
             categories: ['🤩', '🎉'],
             id: '12345',
             quality: 75,
@@ -40,10 +40,12 @@ try {
 
         
 
+        
+
 } catch (e) {
     await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } }).catch(() => {});
 
-m.reply('╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ ERROR ≪━━━\n├ \n├ Something wrong occured.\n├ Try again, loser.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆')
+m.reply('╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ ERROR ≪━━━\n├ \n├ Something wrong occured.\n├ Try again, loser.\n╰━━━━━━━━━━...')
 
 }
     }

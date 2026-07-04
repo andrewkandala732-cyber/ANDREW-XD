@@ -9,13 +9,13 @@ export default {
     const { client, m } = context;
     const fq = getFakeQuoted(m);
         await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
-    const bName = botname || 'Fee-Xmd';
+    const bName = botname || '𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗';
 
     try {
       const devContact = {
         phoneNumber: '255752593977',
         fullName: 'fredi_ezra | Fredi Dev',
-        org: 'Fee-Xmd Bot'
+        org: '𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗 Bot'
       };
 
       const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:${devContact.fullName}\nORG:${devContact.org};\nTEL;type=CELL;type=VOICE;waid=${devContact.phoneNumber}:+${devContact.phoneNumber}\nEND:VCARD`;
