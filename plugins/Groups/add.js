@@ -10,7 +10,7 @@ export default async (context) => {
 
         if (!text) {
             await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } }).catch(() => {});
-            return m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ ERROR ≪━━━\n├ \n├ Provide number to be added.\n├ Format: add 254114885159\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+            return m.reply(`╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ ERROR ≪━━━\n├ \n├ Provide number to be added.\n├ Format: add 254114885159\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝗔𝗡𝗗𝗥𝗘𝗪`);
         }
 
         const _participants = participants.map((user) => user.id.split(':')[0] + '@s.whatsapp.net');
@@ -30,7 +30,7 @@ export default async (context) => {
 
         if (!users.length) {
             await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } });
-            return m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ ADD ≪━━━\n├ \n├ None of those numbers exist on WhatsApp\n├ or they're already in the group. 🙄\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+            return m.reply(`╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ ADD ≪━━━\n├ \n├ None of those numbers exist on WhatsApp\n├ or they're already in the group. 🙄\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝗔𝗡𝗗𝗥𝗘𝗪`);
         }
 
         const response = await client.query({
