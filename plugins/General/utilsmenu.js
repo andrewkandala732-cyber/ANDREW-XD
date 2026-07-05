@@ -11,7 +11,7 @@ export default {
     const { client, m, pict } = context;
     const fq = getFakeQuoted(m);
         await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
-    const botname = 'Fee-Xmd';
+    const botname = '𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗';
 
     const settings = await getSettings();
     const effectivePrefix = settings.prefix || '';
@@ -29,7 +29,7 @@ export default {
         .join('');
     };
 
-    let menuText = `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ UTILS MENU ≪━━━\n├ \n├ Prefix: ${effectivePrefix || 'None'}\n├ \n`;
+    let menuText = `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ UTILS MENU ≪━━━\n├ \n├ Prefix: ${effectivePrefix || 'None'}\n├ \n`;
 
     let commandFiles = fs.readdirSync('./plugins/Utils').filter(file => file.endsWith('.js'));
     for (const file of commandFiles) {
@@ -39,7 +39,7 @@ export default {
     }
 
     menuText += `╰━━━━━━━━━━━━━━━━ᕗ\n`;
-    menuText += `> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+    menuText += `> ©𝗔𝗡𝗗𝗥𝗘𝗪`;
 
         await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
         await client.sendMessage(m.chat, { text: menuText }, { quoted: fq });

@@ -21,7 +21,7 @@ export default {
 
         if (!text) {
             await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } });
-            return m.reply('╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ BRAT ≪━━━\n├ \n├ What am i, a mind reader?\n├ @' + m.sender.split('@')[0] + '! you forgot the text, genius.\n├ Example: ' + prefix + 'brat i\'m a dumbass\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆', { mentions: [m.sender] });
+            return m.reply('╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ BRAT ≪━━━\n├ \n├ What am i, a mind reader?\n├ @' + m.sender.split('@')[0] + '! [...]');
         }
 
         try {
@@ -48,7 +48,7 @@ export default {
 
             const sticker = new Sticker(tempFile, {
                 pack: packname || 'p',
-                author: author || 'fredi_ezra [dev]',
+                author: author || '𝗔𝗡𝗗𝗥𝗘𝗪 [dev]',
                 type: StickerTypes.FULL,
                 categories: ['🤩', '🎉'],
                 id: '12345',
@@ -80,7 +80,7 @@ export default {
                 errorMessage = 'Failed to process. Try again later.';
             }
 
-            await m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ FAILED ≪━━━\n├ \n├ Brat text generation failed.\n├ ${errorMessage}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+            await m.reply(`╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ FAILED ≪━━━\n├ \n├ Brat text generation failed.\n├ ${errorMessage}\n╰━━━[...]`);
         }
     }
 };

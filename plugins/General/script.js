@@ -4,7 +4,7 @@ import { getFakeQuoted } from '../../lib/fakeQuoted.js';
 export default {
   name: 'script',
   aliases: ['repo', 'source', 'github', 'git', 'gh', 'src', 'code', 'sourcecode'],
-  description: 'Show GitHub repository info for ᖴᗴᗴ-᙭ᗰᗪツ',
+  description: 'Show GitHub repository info for 𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗',
   run: async (context) => {
     const { client, m, botname, prefix = '' } = context;
     const fq = getFakeQuoted(m);
@@ -31,7 +31,7 @@ export default {
       const createdDate = new Date(repoInfo.createdAt).toLocaleDateString('en-GB');
       const lastUpdateDate = new Date(repoInfo.lastUpdate).toLocaleDateString('en-GB');
 
-      const replyText = `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Repository ≪━━━\n├ \n├ Link:\n├ https://github.com/Fred1e/Fee-XMD\n├ \n├ Stars : ${repoInfo.stars}\n├ Forks : ${repoInfo.forks}\n├ Created : ${createdDate}\n├ Last Update : ${lastUpdateDate}\n├ Owner : ${repoInfo.owner}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+      const replyText = `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Repository ≪━━━\n├ \n├ Link:\n├ https://github.com/Fred1e/Fee-XMD\n├ \n├ Stars : ${repoInfo.stars}\n├ Forks : ${repoInfo.forks}\n├ Created : ${createdDate}\n├ Last Update : ${lastUpdateDate}\n├ Owner : ${repoInfo.owner}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪`;
 
       await client.sendMessage(m.chat, { react: { text: '✅', key: m.reactKey } });
 
@@ -75,7 +75,7 @@ export default {
               showAdAttribution: false,
               title: `${botname}`,
               body: `Don't fuck this up.`,
-              sourceUrl: `https://github.com/Fred1e/Fee-XMD`,
+              sourceUrl: 'https://github.com/Fred1e/Fee-XMD',
               mediaType: 1,
               renderLargerThumbnail: true
             }
@@ -87,7 +87,7 @@ export default {
       await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } }).catch(() => {});
       console.error('Error in repo command:', error);
       await client.sendMessage(m.chat, {
-        text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ Couldn't fetch repo data\n├ ${error.message}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`
+        text: `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ Couldn't fetch repo data\n├ ${error.message}\n╰━━━━━━��[...]
       }, { quoted: fq });
     }
   }
