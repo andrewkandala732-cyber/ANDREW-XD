@@ -14,7 +14,7 @@ export default {
     const { client, m, totalCommands, mode, pict, fakeQuoted } = context;
     const fq = getFakeQuoted(m);
     await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
-    const botname = 'Fee-Xmd';
+    const botname = '𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗';
 
     const settings = await getSettings();
     const effectivePrefix = settings.prefix || '';
@@ -61,7 +61,7 @@ export default {
         .join('');
     };
 
-    let menuText = `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Fᴜʟʟ Mᴇɴᴜ ≪━━━\n├ \n├ Greetings, @${m.sender.split('@')[0].split(':')[0]}\n├ \n├ Bot: ${botname}\n├ Total Commands: ${totalCommands}\n├ Time: ${getCurrentTimeInNairobi()}\n├ Prefix: ${effectivePrefix || 'None'}\n├ Mode: ${mode}\n├ Library: Baileys\n╰━━━━━━━━━━━━━━━━ᕗ\n\n`;
+    let menuText = `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Fᴜʟʟ Mᴇɴᴜ ≪━━━\n├ \n├ Greetings, @${m.sender.split('@')[0].split(':')[0]}\n├ \n├ Bot: ${botname}\n├ Total Commands: ${totalCommands}\n├ Time: ${getCurrentTimeInNairobi()}\n├ Prefix: ${effectivePrefix || 'None'}\n├ Mode: ${mode}\n├ Library: Baileys\n╰━━━━━━━━━━━━━━━━ᕗ\n\n`;
 
     for (const category of categories) {
       let commandFiles;
@@ -71,7 +71,7 @@ export default {
 
       if (commandFiles.length === 0 && category.name !== 'NSFW') continue;
 
-      menuText += `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ ${category.display} ≪━━━\n├ \n`;
+      menuText += `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ ${category.display} ≪━━━\n├ \n`;
 
       if (category.name === 'NSFW') {
         const plus18Commands = ['xvideo'];
@@ -103,7 +103,7 @@ export default {
       menuText += `╰━━━━━━━━━━━━━━━━ᕗ\n\n`;
     }
 
-    menuText += `> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+    menuText += `> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝗔𝗡𝗗𝗥𝗘𝗪`;
 
     await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
     await client.sendMessage(m.chat, {
@@ -134,7 +134,7 @@ export default {
               title: s.title,
               rows: s.rows.map(r => ({ title: r.title, description: r.description, rowId: r.id }))
             })),
-            footer: '©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆',
+            footer: '©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝗔𝗡𝗗𝗥𝗘𝗪',
           },
         }, { quoted: fq });
       } catch {}
@@ -146,7 +146,7 @@ export default {
       const interactiveMsg = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
         interactiveMessage: {
           body: { text: 'Browse Categories' },
-          footer: { text: '©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆' },
+          footer: { text: '©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝗔𝗡𝗗𝗥𝗘𝗪' },
           header: { hasMediaAttachment: false },
           nativeFlowMessage: {
             messageVersion: 1,
