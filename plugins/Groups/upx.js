@@ -8,7 +8,7 @@ const GH_ASSET_DIR = 'assets/reactions';
 
 const BOX = (title, lines) => {
     const body = (Array.isArray(lines) ? lines : [lines]).map(l => `├ ${l}`).join('\n');
-    return `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ ${title} ≪━━━\n├\n${body}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+    return `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ ${title} ≪━━━\n├\n${body}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪`;
 };
 
 async function ghApiPut(token, path, body) {
@@ -21,7 +21,7 @@ async function ghApiPut(token, path, body) {
             headers: {
                 'Authorization': `token ${token}`,
                 'Content-Type': 'application/json',
-                'User-Agent': 'Fee-Xmd-Bot',
+                'User-Agent': 'ANDREW-XD-Bot',
                 'Content-Length': Buffer.byteLength(data)
             }
         }, (res) => {
@@ -44,7 +44,7 @@ async function ghApiGet(token, path) {
             hostname: 'api.github.com',
             path: `/repos/${GH_OWNER}/${GH_REPO}/contents/${path}`,
             method: 'GET',
-            headers: { 'Authorization': `token ${token}`, 'User-Agent': 'Fee-Xmd-Bot' }
+            headers: { 'Authorization': `token ${token}`, 'User-Agent': 'ANDREW-XD-Bot' }
         }, (res) => {
             let raw = '';
             res.on('data', c => raw += c);
