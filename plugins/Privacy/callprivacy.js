@@ -9,7 +9,7 @@ export default async (context) => {
         const fq = getFakeQuoted(m);
         await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
 
-        const fmt = (msg) => `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ CALL PRIVACY ≪━━━\n├ \n├ ${msg}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©fredi_ezra`;
+        const fmt = (msg) => `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ CALL PRIVACY ≪━━━\n├ \n├ ${msg}\n╰━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪`;
         const options = ['all', 'known', 'none'];
         const value = (args[0] || '').toLowerCase();
 
