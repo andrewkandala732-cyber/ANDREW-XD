@@ -5,7 +5,7 @@ export default async (context) => {
 
   if (text) {
     await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
-    return client.sendMessage(m.chat, { text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ What's with the extra crap, @${m.sender.split('@')[0].split(':')[0]}?\n├ Just say !uptime, dumbass.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆` }, { quoted: fq, mentions: [m.sender] });
+    return client.sendMessage(m.chat, { text: `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ What's with the extra crap, @${m.sender.split('@')[0]}?\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪` });
   }
 
   try {
@@ -24,12 +24,12 @@ export default async (context) => {
     };
 
     const uptimeText = formatUptime(process.uptime());
-    const replyText = `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Uᴘᴛɪᴍᴇ ≪━━━\n├ \n├ *${botname || 'Fee-XMD'} Uptime, Bitches*\n├ \n├ I've been awake for *${uptimeText}*,\n├ running shit like a boss.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+    const replyText = `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Uᴘᴛɪᴍᴇ ≪━━━\n├ \n├ *${botname || '𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗'} Uptime, Bitches*\n├ \n├ I've been up for: ${uptimeText}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪`;
 
     await client.sendMessage(m.chat, { text: replyText }, { quoted: fq });
   } catch (error) {
     await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } }).catch(() => {});
     console.error('Error in uptime command:', error);
-    await client.sendMessage(m.chat, { text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ Something's fucked up with the\n├ uptime check. Try again later, loser.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆` }, { quoted: fq });
+    await client.sendMessage(m.chat, { text: `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ Something's fucked up with the\n├ uptime command.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪` });
   }
 };
