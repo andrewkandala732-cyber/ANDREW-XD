@@ -13,7 +13,7 @@ export default async (context) => {
       const link = `https://chat.whatsapp.com/${code}`;
 
       const bodyText =
-        `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n` +
+        `╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n` +
         `├━━━≫ Gʀᴏᴜᴘ Lɪɴᴋ ≪━━━\n` +
         `├ \n` +
         `├ ${link}\n` +
@@ -21,7 +21,7 @@ export default async (context) => {
         `├ Here's your precious link.\n` +
         `├ Copy it and stop bugging me.\n` +
         `╰━━━━━━━━━━━━━━━━ᕗ\n` +
-        `> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+        `> ©𝗔��𝗗𝗥𝗘𝗪`;
 
       try {
         const msg = generateWAMessageFromContent(
@@ -55,7 +55,7 @@ export default async (context) => {
       await client.sendMessage(m.chat, { react: { text: '', key: m.reactKey } });
     } catch {
       await client.sendMessage(m.chat, { react: { text: '', key: m.reactKey } });
-      await m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ Couldn't fetch the link.\n├ Either make me admin or quit.\n╰━━━━━━━━━━━━━━━━ᕗ\n> © Powered By Fredi_Ezra`);
+      await m.reply(`╭━━━ᕙ    𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ Couldn't fetch the link.\n├ Either make me admin or quit.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝗔𝗡𝗗𝗥𝗘𝗪`);
     }
   });
 };
