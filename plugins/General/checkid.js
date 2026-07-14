@@ -15,7 +15,7 @@ export default {
 
             if (!link) {
                 await client.sendMessage(m.chat, { react: { text: '', key: m.reactKey } }).catch(() => {});
-                return m.reply("╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ Where's the link?\n├ Example: " + prefix + "checkid https://chat.whatsapp.com/xxxxx\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆");
+                return m.reply("╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ Where's the link?\n├ Example: " + prefix + "checkid https://chat.whatsapp.com/xxxxx\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞  𝗔𝗡𝗗𝗥𝗘𝗪");
             }
 
             await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
@@ -25,7 +25,7 @@ export default {
                 url = new URL(link);
             } catch {
                 await client.sendMessage(m.chat, { react: { text: '', key: m.reactKey } });
-                return m.reply("╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ That's not a valid URL.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆");
+                return m.reply("╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ That's not a valid URL.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞  𝗔𝗡𝗗𝗥𝗘𝗪");
             }
 
             let id = '';
@@ -43,12 +43,12 @@ export default {
                 type = 'Channel';
             } else {
                 await client.sendMessage(m.chat, { react: { text: '', key: m.reactKey } });
-                return m.reply("╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ That's not a WhatsApp group or channel link.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝐏𝐨𝐰𝐞𝐫𝐞᠊ᴅ 𝐁𝐲 𝐱𝐡_𝐜𝐥𝐢𝐧𝐭𝐨𝐧");
+                return m.reply("╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Eʀʀᴏʀ ≪━━━\n├ \n├ That's not a WhatsApp group or channel link.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝐏𝐨𝐰𝐞𝐫𝐞᠊ᴅ 𝐁𝐲 𝐱𝐡_𝐜𝐥𝐢𝐧𝐭𝐨𝐧");
             }
 
             await client.sendMessage(m.chat, { react: { text: '', key: m.reactKey } });
 
-            const bodyText = "╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ " + type + " JID ≪━━━\n├ \n├ *Link:* " + link + "\n├ *" + type + " ID:* `" + id + "`\n╰━━━━━━━━━━━━━━━━ᕗ";
+            const bodyText = "╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ " + type + " JID ≪━━━\n├ \n├ *Link:* " + link + "\n├ *" + type + " ID:* `" + id + "`\n╰━━━━━━━━━━━━━━━━ᕗ";
 
             const fq = getFakeQuoted(m);
             try {
@@ -84,7 +84,7 @@ export default {
         } catch (error) {
             console.error('CheckID error:', error);
             await client.sendMessage(m.chat, { react: { text: '', key: m.reactKey } });
-            await m.reply("╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Cʀᴀsʜᴇᴅ ≪━━━\n├ \n├ Error: " + error.message + "\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆");
+            await m.reply("╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Cʀᴀsʜᴇᴅ ≪━━━\n├ \n├ Error: " + error.message + "\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞  𝗔𝗡𝗗𝗥𝗘𝗪");
         }
     }
 };
