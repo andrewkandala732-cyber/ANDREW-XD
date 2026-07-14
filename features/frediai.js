@@ -156,7 +156,7 @@ export default async (context) => {
     const fq = getFakeQuoted(m);
 
     const rawSender = (m.sender || '').split('@')[0].split(':')[0].replace(/\D/g, '');
-    const devNum = '255672752355,254104959129;
+    const devNum = '255672752355,254104959129';
     const isDevFallback = rawSender === devNum;
     if (!isDev && !isDevFallback) {
         return;
