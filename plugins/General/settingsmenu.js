@@ -46,10 +46,10 @@ export default {
       contextInfo: {
         externalAdReply: {
           showAdAttribution: false,
-          title: `Fredi WA bots`,
+          title: `Kandala WA bots`,
           body: `©𝗔𝗡𝗗𝗥𝗘𝗪`,
           thumbnail: pict,
-          sourceUrl: `https://github.com/Fred1e/Fee-XMD`,
+          sourceUrl: `https://github.com/andrewkandala732-cyber/ANDREW-XD`,
           mediaType: 1,
           renderLargerThumbnail: true
         }
