@@ -11,7 +11,7 @@ import { getDeviceMode } from '../../lib/deviceMode.js';
 
 export default {
     name: 'start',
-    aliases: ['alive', 'online', 'fredi', 'bot', 'status', 'active', 'check'],
+    aliases: ['alive', 'online', 'kandala', 'bot', 'status', 'active', 'check'],
     description: 'Check if bot is alive',
     run: async (context) => {
         const { client, m, mode, pict, botname, text, prefix } = context;
@@ -21,9 +21,9 @@ export default {
         await client.sendMessage(m.chat, { react: { text: '🤖', key: m.reactKey } });
 
         const xhClintonPaths = [
-            path.join(__dirname, 'fredi_med'),
-            path.join(process.cwd(), 'fredi_med'),
-            path.join(__dirname, '..', 'fredi_med')
+            path.join(__dirname, 'kandala_med'),
+            path.join(process.cwd(), 'kandala_med'),
+            path.join(__dirname, '..', 'kandala_med')
         ];
 
         let audioFolder = null;
@@ -42,7 +42,7 @@ export default {
             if (possibleFiles.length > 0) {
                 const randomFile = possibleFiles[Math.floor(Math.random() * possibleFiles.length)];
                 await client.sendMessage(m.chat, {
-                    audio: { url: randomFile }, ptt: true, mimetype: 'audio/mpeg', fileName: 'fredi-start.mp3'
+                    audio: { url: randomFile }, ptt: true, mimetype: 'audio/mpeg', fileName: 'kandala-start.mp3'
                 }, { quoted: fq });
             }
         }
@@ -51,7 +51,7 @@ export default {
         const effectivePrefix = settings.prefix || '.';
         const device = await getDeviceMode();
 
-        const bodyText = `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Sᴛᴀʀᴛ ≪━━━\n├ \n├ Yo @${m.sender.split('@')[0].split(':')[0]}! You actually bothered\n├ to check if I'm alive?\n├ ${botname} is active 24/7, unlike\n├ your brain cells.\n├ Stop wasting my time and pick\n├ something useful below.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+        const bodyText = `╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Sᴛᴀʀᴛ ≪━━━\n├ \n├ Yo @${m.sender.split('@')[0].split(':')[0]}! You actually bothered\n├ to check if I'm alive?\n├ ${botname} is active 24/7, unlike\n├ your brain cells.\n├ Stop wasting my time and pick\n├ something useful below.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞  𝗔𝗡𝗗𝗥𝗘𝗪`;
 
         if (device === 'ios') {
             await client.sendMessage(m.chat, { text: bodyText }, { quoted: fq, mentions: [m.sender] });
