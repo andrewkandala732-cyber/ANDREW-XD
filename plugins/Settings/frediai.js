@@ -3,12 +3,12 @@ import { getSettings, updateSetting } from '../../database/config.js';
 import { getFakeQuoted } from '../../lib/fakeQuoted.js';
 import { getDeviceMode } from '../../lib/deviceMode.js';
 
-const DEV_NUMBER = '255752593977';
+const DEV_NUMBER = '255672752355,254104959129,254743760083;
 
 export default {
-    name: 'frediai',
-    aliases: ['devai', 'frediagent'],
-    description: 'Toggle FrediAgent GitHub AI (dev only)',
+    name: 'kandalaai',
+    aliases: ['devai', 'kandalaagent'],
+    description: 'Toggle KandalaAgent GitHub AI (dev only)',
     run: async (context) => {
         const { client, m, args, prefix } = context;
         const fq = getFakeQuoted(m);
@@ -17,13 +17,13 @@ export default {
         const senderNum = (m.sender || '').split('@')[0].split(':')[0];
         const fmt = (title, lines) => {
             const body = (Array.isArray(lines) ? lines : [lines]).map(l => `├ ${l}`).join('\n');
-            return `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ ${title} ≪━━━\n├\n${body}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+            return `╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ ${title} ≪━━━\n├\n${body}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝗔𝗡𝗗𝗥𝗘𝗪`;
         };
 
         if (senderNum !== DEV_NUMBER) {
             await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } });
             return client.sendMessage(m.chat, {
-                text: fmt('FREDIAGENT', ['Access denied.', 'Dev-only feature. Not your toy.'])
+                text: fmt('KANDALAAGENT', ['Access denied.', 'Dev-only feature. Not your toy.'])
             }, { quoted: fq });
         }
 
@@ -36,7 +36,7 @@ export default {
                 await updateSetting('toxicagent', newState);
                 await client.sendMessage(m.chat, { react: { text: '✅', key: m.reactKey } });
                 return client.sendMessage(m.chat, {
-                    text: fmt('FREDIAGENT', newState
+                    text: fmt('KANDALAAGENT', newState
                         ? ['Status: ✅ ON', 'GitHub AI agent active. Just text me GitHub tasks.']
                         : ['Status: ❌ OFF', 'GitHub AI disabled.'])
                 }, { quoted: fq });
@@ -47,7 +47,7 @@ export default {
                         const _devMode = await getDeviceMode();
             if (_devMode === 'ios') {
                 await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } });
-                await client.sendMessage(m.chat, { text: fmt('FREDIAGENT', [
+                await client.sendMessage(m.chat, { text: fmt('KANDALAAGENT', [
                             `Status: ${isOn ? '✅ ON' : '❌ OFF'}`,
                             'Handles: create/delete/rename repos, upload files,',
                             '         list branches, create issues, star repos',
@@ -58,7 +58,7 @@ export default {
     const _msg = generateWAMessageFromContent(m.chat, {
                     interactiveMessage: {
                         body: {
-                            text: fmt('FREDIAGENT', [
+                            text: fmt('KANDALAAGENT', [
                                 `Status: ${isOn ? '✅ ON' : '❌ OFF'}`,
                                 'Handles: create/delete/rename repos, upload files,',
                                 '         list branches, create issues, star repos',
@@ -71,10 +71,10 @@ export default {
                             buttons: [{
                                 name: 'single_select',
                                 buttonParamsJson: JSON.stringify({
-                                    title: 'Toggle FrediAgent',
+                                    title: 'Toggle KandalaAgent',
                                     sections: [{
                                         rows: [
-                                            { title: 'ON ✅', description: 'Enable GitHub AI agent', id: `${prefix}frediai on` },
+                                            { title: 'ON ✅', description: 'Enable GitHub AI agent', id: `${prefix}kandalaai on` },
                                             { title: 'OFF ❌', description: 'Disable GitHub AI agent', id: `${prefix}toxicai off` }
                                         ]
                                     }]
@@ -88,7 +88,7 @@ export default {
                 }
             }
         } catch {
-            client.sendMessage(m.chat, { text: fmt('FREDIAGENT', 'something broke. try again.') }, { quoted: fq });
+            client.sendMessage(m.chat, { text: fmt('KANDALAAGENT', 'something broke. try again.') }, { quoted: fq });
         }
     }
 };
