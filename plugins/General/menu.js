@@ -119,7 +119,7 @@ export default {
                             mediaType: 1,
                             thumbnail: pict,
                             mediaUrl: '',
-                            sourceUrl: 'https://github.com/Fred1e/Fee-XMD',
+                            sourceUrl: 'https://github.com/andrewkandala732-cyber/ANDREW-XD',
                             showAdAttribution: false,
                             renderLargerThumbnail: true,
                         }
@@ -131,8 +131,8 @@ export default {
                                 name: 'cta_url',
                                 buttonParamsJson: JSON.stringify({
                                     display_text: 'GitHub Repo',
-                                    url: 'https://github.com/Fred1e/Fee-XMD',
-                                    merchant_url: 'https://github.com/Fred1e/Fee-XMD'
+                                    url: 'https://github.com/andrewkandala732-cyber/ANDREW-XD',
+                                    merchant_url: 'https://github.com/andrewkandala732-cyber/ANDREW-XD'
                                 })
                             },
                             {
@@ -160,7 +160,7 @@ export default {
                         mediaType: 1,
                         thumbnail: pict,
                         mediaUrl: '',
-                        sourceUrl: 'https://github.com/Fred1e/Fee-XMD',
+                        sourceUrl: 'https://github.com/andrewkandala732-cyber/ANDREW-XD',
                         showAdAttribution: false,
                         renderLargerThumbnail: true,
                     }
