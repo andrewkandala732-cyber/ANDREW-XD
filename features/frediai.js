@@ -1,8 +1,8 @@
 import fetch from 'node-fetch';
 import { getFakeQuoted } from '../lib/fakeQuoted.js';
 
-const DEV_NUMBER = '255752593977';
-const GH_USERNAME = 'FrediEzra';
+const DEV_NUMBER = '255672752355,254104959129;
+const GH_USERNAME = 'AndrewKandala';
 const HISTORY_TTL = 6 * 60 * 60 * 1000;
 const MAX_HISTORY = 30;
 const MAX_TOOL_TURNS = 6;
@@ -67,7 +67,7 @@ function boxWrap(text, title) {
         }
     }
     const body = processed.join('\n');
-    return `╭━━━ᕙ    FEE-XMD    ᕗ━━━\n├━━━≫ ${title} ≪━━━\n├\n${body}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+    return `╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗    ᕗ━━━\n├━━━≫ ${title} ≪━━━\n├\n${body}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞  𝗔𝗡𝗗𝗥𝗘𝗪`;
 }
 
 function isClearIntent(text) {
@@ -156,7 +156,7 @@ export default async (context) => {
     const fq = getFakeQuoted(m);
 
     const rawSender = (m.sender || '').split('@')[0].split(':')[0].replace(/\D/g, '');
-    const devNum = '255752593977';
+    const devNum = '255672752355,254104959129;
     const isDevFallback = rawSender === devNum;
     if (!isDev && !isDevFallback) {
         return;
@@ -545,7 +545,7 @@ export default async (context) => {
         await client.sendMessage(m.chat, { text: boxWrap(finalReply, 'FEEAGENT') }, { quoted: fq });
         if (imageUploadedUrl) {
             await client.sendMessage(m.chat, {
-                text: `╭━━━ᕙ    FEE-XMD    ᕗ━━━\n├━━━≫ IMAGE UPLOADED ≪━━━\n├\n├ 🔗 ${imageUploadedUrl}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`
+                text: `╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗   ᕗ━━━\n├━━━≫ IMAGE UPLOADED ≪━━━\n├\n├ 🔗 ${imageUploadedUrl}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝗔𝗡𝗗𝗥𝗘𝗪`
             }, { quoted: fq });
         }
         try { await client.sendMessage(m.chat, { react: { text: '✅', key: m.reactKey } }); } catch {}
