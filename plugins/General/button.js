@@ -12,8 +12,8 @@ export default {
     try {
       await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
       await client.sendMessage(m.chat, {
-        text: `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ Mᴇɴᴜ ≪━━━\n├ \n├ Choose an option from the list:\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`,
-        footer: 'Fredi WA Bots',
+        text: `╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ Mᴇɴᴜ ≪━━━\n├ \n├ Choose an option from the list:\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞  𝗔𝗡𝗗𝗥𝗘𝗪`,
+        footer: 'kandala WA Bots',
         sections: [
           {
             title: 'General Commands',
