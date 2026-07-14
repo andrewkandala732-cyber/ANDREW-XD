@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import { getFakeQuoted } from '../lib/fakeQuoted.js';
 
-const DEV_NUMBER = '255672752355,254104959129;
+const DEV_NUMBER = '255672752355,254104959129';
 const GH_USERNAME = 'AndrewKandala';
 const HISTORY_TTL = 6 * 60 * 60 * 1000;
 const MAX_HISTORY = 30;
