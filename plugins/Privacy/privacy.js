@@ -20,7 +20,7 @@ const Myself = await client.decodeJid(client.user.id);
                 calladd
         } = await client.fetchPrivacySettings(true);
         
-        const fnn = `╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ PRIVACY SETTINGS ≪━━━\n├ \n├ Name: ${client.user.name}\n├ Online: ${online}\n├ Profile Picture: ${profile}\n├ Last Seen: ${last}\n├ Read Receipt: ${readreceipts}\n├ Group Add: ${groupadd}\n├ Status: ${status}\n├ Call Add: ${calladd}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`;
+        const fnn = `╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ PRIVACY SETTINGS ≪━━━\n├ \n├ Name: ${client.user.name}\n├ Online: ${online}\n├ Profile Picture: ${profile}\n├ Last Seen: ${last}\n├ Read Receipt: ${readreceipts}\n├ Group Add: ${groupadd}\n├ Status: ${status}\n├ Call Add: ${calladd}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝗔𝗡𝗗𝗥𝗘𝗪`;
 
 
 const avatar = await client.profilePictureUrl(Myself, 'image').catch(_ => 'https://telegra.ph/file/b34645ca1e3a34f1b3978.jpg');
