@@ -17,12 +17,12 @@ export default async (context) => {
             const trimmedText = text.trim();
             if (!trimmedText) {
                 await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } });
-                return m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├ \n├ No command provided for eval!\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+                return m.reply(`╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├ \n├ No command provided for eval!\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 kandala`);
             }
             for (const pattern of BLOCKED_PATTERNS) {
                 if (pattern.test(trimmedText)) {
                     await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } });
-                    return m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ BLOCKED ≪━━━\n├ \n├ That eval is blocked for security.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+                    return m.reply(`╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ BLOCKED ≪━━━\n├ \n├ That eval is blocked for security.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 kandala`);
                 }
             }
             let evaled = await eval(trimmedText);
@@ -31,7 +31,7 @@ export default async (context) => {
             if (evaled && evaled !== 'undefined' && evaled !== 'null') await m.reply(evaled);
         } catch (err) {
             await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } });
-            await m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ EVAL ERROR ≪━━━\n├ \n├ ${String(err)}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+            await m.reply(`╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ EVAL ERROR ≪━━━\n├ \n├ ${String(err)}\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 kandala`);
         }
     });
 };
