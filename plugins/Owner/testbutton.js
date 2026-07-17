@@ -7,7 +7,7 @@ export default {
 
         await client.sendMessage(m.chat, {
             text: 'Pick a command to run:',
-            footer: 'Fee-Xmd',
+            footer: ' 𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗',
             buttonText: 'Open List',
             sections: [{
                 title: 'Bot Commands',
