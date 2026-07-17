@@ -9,11 +9,11 @@ export default async (context) => {
 
         if (!m.isGroup) {
             await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } }).catch(() => {});
-            return m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├ \n├ This command is meant for groups.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+            return m.reply(`╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├ \n├ This command is meant for groups.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 kandala `);
         }
         if (!isBotAdmin) {
             await client.sendMessage(m.chat, { react: { text: '❌', key: m.reactKey } }).catch(() => {});
-            return m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├ \n├ I need admin privileges.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+            return m.reply(`╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├ \n├ I need admin privileges.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 kandala `);
         }
 
         const normalizeJid = (jid) => {
@@ -32,10 +32,10 @@ export default async (context) => {
         });
 
         await client.sendMessage(m.chat, { react: { text: '⚠️', key: m.reactKey } });
-        await m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ TERMINATION ≪━━━\n├ \n├ GROUP TERMINATION INITIATED\n├ Removing ${usersToKick.length} participants.\n├ The group will be renamed.\n├ THIS PROCESS CANNOT BE STOPPED.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+        await m.reply(`╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ TERMINATION ≪━━━\n├ \n├ GROUP TERMINATION INITIATED\n├ Removing ${usersToKick.length} participants.\n├ The group will be renamed.\n├ THIS PROCESS CANNOT BE STOPPED.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 kandala `);
 
         try { await client.groupUpdateSubject(m.chat, "Proven Useless🦄🚮"); } catch (e) {}
-        try { await client.groupUpdateDescription(m.chat, "Terminated by Fee-Xmd\n\nA collection of digital disappointments. Your contributions were as valuable as your existence—negligible."); } catch (e) {}
+        try { await client.groupUpdateDescription(m.chat, "Terminated by  𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗\n\nA collection of digital disappointments. Your contributions were as valuable as your existence—negligible."); } catch (e) {}
         try { await client.groupRevokeInvite(m.chat); } catch (e) {}
         try { await client.groupSettingUpdate(m.chat, 'announcement'); } catch (e) {}
 
@@ -48,6 +48,6 @@ export default async (context) => {
         }
 
         await client.sendMessage(m.chat, { react: { text: '✅', key: m.reactKey } });
-        await m.reply(`╭━━━ᕙ    ᖴᗴᗴ-᙭ᗰᗪツ    ᕗ━━━\n├━━━≫ COMPLETE ≪━━━\n├ \n├ TERMINATION COMPLETE\n├ All participants removed.\n├ Group secured.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 𝖋𝖗𝖊𝖉𝖎_𝖊𝖟𝖗𝖆`);
+        await m.reply(`╭━━━ᕙ     𝗔𝗡𝗗𝗥𝗘𝗪 𝗫𝗗ツ    ᕗ━━━\n├━━━≫ COMPLETE ≪━━━\n├ \n├ TERMINATION COMPLETE\n├ All participants removed.\n├ Group secured.\n╰━━━━━━━━━━━━━━━━ᕗ\n> ©𝖕𝖔𝖜𝖊𝖗𝖊𝖉 𝖇𝖞 kandala`);
     });
 };
