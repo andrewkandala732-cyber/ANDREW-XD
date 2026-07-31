@@ -96,3 +96,20 @@
 ### Option A: 📦 Download ZIP
 ```bash
 curl -L https://github.com/andrewkandala732-cyber/ANDREW-XD/archive/refs/heads/main.zip -o ANDREW-XD.zip
+## 👨‍💻 Developer Information
+<div align="center">
+<img src="https://files.catbox.moe/zptjhv.jpg" width="150" style="border-radius: 50%; border: 3px solid #7C3AED;">
+<br>
+<b>Andrew Kandala</b><br>
+From Mtwara, Tanzania 🇹🇿<br>
+📱 WhatsApp: <a href="https://wa.me/254743760083">+254 743 760 083</a><br>
+🌐 GitHub: <a href="https://github.com/andrewkandala732-cyber/ANDREW-XD">andrewkandala732-cyber/ANDREW-XD</a><br>
+🔗 Pair Site: <a href="https://andrew-kandala-pair.onrender.com">andrew-kandala-pair.onrender.com</a>
+</div>
+
+## 📞 Contact Information
+- **Phone:** +254 743 760 083
+- **WhatsApp:** https://wa.me/254743760083
+- **GitHub:** https://github.com/andrewkandala732-cyber/ANDREW-XD
+- **Location:** Mtwara, Tanzania 🇹🇿
+- **Response Time:** Usually within 1–2 hours
