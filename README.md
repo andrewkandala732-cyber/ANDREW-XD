@@ -19,7 +19,11 @@
   </a>
 
   <a href="https://render.com/deploy" target="_blank" style="margin:4px">
-    <img src="https://img.shields.io/badge/Deploy_Now-F59E0B?style=for-the-badge&logo=rocket&logoColor=white" alt="Deploy Now" width="160">
+    <img src="https://img.shields.io/badge/Deploy_Render-F59E0B?style=for-the-badge&logo=render&logoColor=white" alt="Deploy Render" width="160">
+  </a>
+
+  <a href="https://heroku.com/deploy?template=https://github.com/andrewkandala732-cyber/ANDREW-XD" target="_blank" style="margin:4px">
+    <img src="https://img.shields.io/badge/Deploy_Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" alt="Deploy Heroku" width="160">
   </a>
 
   <a href="https://github.com/andrewkandala732-cyber/ANDREW-XD" target="_blank" style="margin:4px">
@@ -68,9 +72,16 @@
 </a>
 
 ### Option 2: 🛠 Deploy Your Own Instance
+
+**Deploy to Render**
 <a href="https://render.com/deploy" target="_blank" style="margin:4px">
-    <img src="https://img.shields.io/badge/Deploy_Now-06B6D4?style=for-the-badge&logo=rocket&logoColor=white" alt="Deploy Now" width="160">
-  </a>
+    <img src="https://img.shields.io/badge/Deploy_Render-06B6D4?style=for-the-badge&logo=render&logoColor=white" alt="Deploy Render" width="160">
+</a>
+
+**Deploy to Heroku**
+<a href="https://heroku.com/deploy?template=https://github.com/andrewkandala732-cyber/ANDREW-XD" target="_blank" style="margin:4px">
+    <img src="https://img.shields.io/badge/Deploy_Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" alt="Deploy Heroku" width="160">
+</a>
 
 ### Supported Platforms
 - Render (Free tier)
